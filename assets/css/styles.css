@@ -1,26 +1,23 @@
-
-
 .theme-toggle-button {
-    width: 40px;
-    height: 40px;
-    border: none;
-    background-color: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(4px);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    color: inherit;
-    font-size: 1.3rem;
-    cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(4px);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  color: inherit;
+  font-size: 1.3rem;
+  cursor: pointer;
 }
 
 .theme-toggle-button:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    transform: scale(1.05);
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
 }
-
 
 /* --- Toggler Animation --- */
 .custom-toggler {
@@ -43,7 +40,6 @@
   box-shadow: none !important;
   border: none !important;
 }
-
 
 .toggler-icon {
   display: block;
@@ -72,9 +68,6 @@
   outline: none;
   box-shadow: none;
 }
-
-
-
 
 html[data-bs-theme="dark"] body {
   background: linear-gradient(
@@ -458,7 +451,6 @@ html[data-bs-theme="light"] .team-section {
   border: 1px solid #ced4da;
 }
 
-
 /* Footer style for both light and dark themes */
 #siteFooter {
   transition: background-color 0.3s, color 0.3s;
@@ -476,4 +468,51 @@ html[data-bs-theme="light"] .team-section {
 [data-bs-theme="light"] #siteFooter {
   background-color: #f8f9fa !important;
   color: #212529;
+}
+
+/* Light mode */
+[data-bs-theme="light"] .whatsapp-box {
+  background-color: #e9fcef;
+  color: #1f513f;
+  border: 1px solid #c3e6cb;
+}
+
+/* Dark mode */
+[data-bs-theme="dark"] .whatsapp-box {
+  background-color: #1f2f1f;
+  color: #d4f7de;
+  border: 1px solid #3a594a;
+}
+
+[data-bs-theme="dark"] .whatsapp-box a.btn {
+  border-color: #42f37f;
+  color: #42f37f;
+}
+
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* product page css */
+.icon-wrapper {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  transition: transform 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.industry-card:hover .icon-wrapper {
+  transform: scale(1.1);
 }
