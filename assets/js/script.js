@@ -88,3 +88,32 @@ document.addEventListener("DOMContentLoaded", function () {
     updateNavbarTheme();
   });
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add("visible");
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  document.querySelectorAll(".fade-in").forEach(el => io.observe(el));
+});
+
+// ✅ Add solid background when mobile menu is open
+const navMenu = document.getElementById("navMenu");
+
+if (navMenu) {
+  navMenu.addEventListener("shown.bs.collapse", () => {
+    navbar.classList.add("bg-body");
+    navbar.classList.remove("transparent");
+  });
+
+  navMenu.addEventListener("hidden.bs.collapse", () => {
+    navbar.classList.remove("bg-body");
+    navbar.classList.add("transparent");
+  });
+}
