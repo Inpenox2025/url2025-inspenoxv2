@@ -1,0 +1,479 @@
+
+
+.theme-toggle-button {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(4px);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    color: inherit;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+.theme-toggle-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+
+/* --- Toggler Animation --- */
+.custom-toggler {
+  width: 40px;
+  height: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  border: none !important;
+  background: transparent;
+  padding: 0;
+  outline: none;
+  box-shadow: none !important;
+}
+
+.custom-toggler:focus,
+.custom-toggler:active {
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+
+.toggler-icon {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: var(--bs-body-color);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Transform into X */
+.custom-toggler.active .top-bar {
+  transform: translateY(10px) rotate(45deg);
+}
+
+.custom-toggler.active .middle-bar {
+  opacity: 0;
+}
+
+.custom-toggler.active .bottom-bar {
+  transform: translateY(-10px) rotate(-45deg);
+}
+
+/* Remove outline */
+.custom-toggler:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+
+
+
+html[data-bs-theme="dark"] body {
+  background: linear-gradient(
+    to bottom right,
+    rgba(2, 2, 8, 0.9),
+    rgba(8, 20, 40, 0.9)
+  );
+  color: #fff;
+}
+
+html[data-bs-theme="light"] body {
+  background: linear-gradient(135deg, #ffffff, #e6f0ff);
+  color: #111;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  transition: background 0.6s ease, color 0.6s ease;
+}
+
+.hero {
+  padding: 6rem 0 4rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(4px);
+  opacity: 0.2;
+  z-index: 1;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(
+    60deg,
+    rgba(255, 255, 255, 0.05) 0%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+  z-index: 0;
+  pointer-events: none;
+  animation: shine 8s linear infinite;
+}
+
+.hero > .container {
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.btn-gradient {
+  background: linear-gradient(to right, #00c6ff, #000000);
+  color: white;
+  border: none;
+}
+
+.theme-toggle {
+  cursor: pointer;
+}
+
+.badge-glow {
+  background: #08d6ff;
+  font-weight: 600;
+}
+
+.navbar {
+  transition: background-color 0.4s ease;
+}
+
+.navbar.transparent {
+  background-color: transparent !important;
+}
+
+.navbar-light.scrolled {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+}
+
+.navbar-dark.scrolled {
+  background-color: rgba(0, 0, 0, 0.95) !important;
+}
+
+.navbar-light .nav-link,
+.navbar-light .navbar-brand {
+  color: #000 !important;
+}
+
+.navbar-dark .nav-link,
+.navbar-dark .navbar-brand {
+  color: #fff !important;
+}
+
+.btn-theme {
+  font-weight: 500;
+  border: none;
+  transition: background 0.4s, color 0.4s;
+}
+
+html[data-bs-theme="light"] .btn-theme {
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  color: white;
+}
+
+html[data-bs-theme="dark"] .btn-theme {
+  background: linear-gradient(
+    to bottom right,
+    rgba(2, 2, 8, 0.9),
+    rgba(8, 20, 40, 0.9)
+  );
+  color: #fff;
+  backdrop-filter: blur(12px);
+}
+
+.btn-theme:hover {
+  opacity: 0.9;
+}
+
+.products-section {
+  background: transparent;
+  backdrop-filter: blur(0px);
+  transition: background-color 0.4s ease;
+}
+
+.product-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(8, 214, 255, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: background-color 0.4s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(8, 214, 255, 0.2);
+}
+
+.product-icon {
+  height: 80px;
+  width: auto;
+  transition: transform 0.3s ease;
+  filter: drop-shadow(0 2px 8px rgba(8, 214, 255, 0.3));
+}
+
+.product-card:hover .product-icon {
+  transform: scale(1.1);
+}
+
+/* Light mode adaptation */
+[data-bs-theme="light"] .product-card {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.03);
+}
+
+[data-bs-theme="light"] .product-icon {
+  filter: none;
+}
+
+.backed-by-section,
+.team-section {
+  backdrop-filter: blur(12px);
+  transition: background 0.4s ease;
+  transition: background-color 0.4s ease;
+}
+
+html[data-bs-theme="dark"] .backed-by-section,
+html[data-bs-theme="dark"] .team-section {
+  background-color: linear-gradient(
+    to bottom right,
+    rgba(2, 2, 8, 0.9),
+    rgba(8, 20, 40, 0.9)
+  );
+  color: #fff;
+}
+
+html[data-bs-theme="light"] .backed-by-section,
+html[data-bs-theme="light"] .team-section {
+  background-color: linear-gradient(135deg, #ffffff, #e6f0ff);
+  color: #111;
+}
+
+.partner-logo {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.partner-logo img {
+  max-height: 80px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.partner-logo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(8, 214, 255, 0.3);
+}
+
+.team-card {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 8px 16px rgba(8, 214, 255, 0.05);
+  min-height: 350px;
+}
+
+.team-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(8, 214, 255, 0.2);
+}
+
+.team-img {
+  height: 120px;
+  width: 120px;
+  object-fit: cover;
+  border: 3px solid #08d6ff;
+  transition: transform 0.3s;
+}
+
+.team-card:hover .team-img {
+  transform: scale(1.05);
+}
+
+/* LIGHT MODE */
+.product-testimonial-section {
+  background: linear-gradient(180deg, #f8fbff 0%, #eef5ff 100%);
+  color: #111;
+}
+
+.product-testimonial-section .testi-card {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 8px 16px rgba(8, 214, 255, 0.05);
+}
+
+.testi-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(8, 214, 255, 0.2);
+}
+
+.product-testimonial-section .highlight {
+  background-color: #dff5e1;
+  /* green for ERP */
+  color: #115c36;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+/* Color variants */
+.product-testimonial-section .highlight.green {
+  background-color: #dff5e1;
+  color: #0f5132;
+}
+
+.product-testimonial-section .highlight.blue {
+  background-color: #d7f5fc;
+  color: #0c5460;
+}
+
+.product-testimonial-section .highlight.yellow {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.product-testimonial-section .highlight.red {
+  background-color: #f8d7da;
+  color: #842029;
+}
+
+/* DARK MODE */
+[data-bs-theme="dark"] .product-testimonial-section {
+  background: linear-gradient(to bottom right, #020810, #081428);
+  color: #f1f1f1;
+}
+
+[data-bs-theme="dark"] .product-testimonial-section .card {
+  background-color: #1c1c1c;
+  border: none;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+[data-bs-theme="dark"] .highlight.green {
+  background-color: #174d35;
+  color: #adf7c4;
+}
+
+[data-bs-theme="dark"] .highlight.blue {
+  background-color: #0a4d5b;
+  color: #b6effb;
+}
+
+[data-bs-theme="dark"] .highlight.yellow {
+  background-color: #5a4a1c;
+  color: #ffe484;
+}
+
+[data-bs-theme="dark"] .highlight.red {
+  background-color: #5b1f26;
+  color: #ffc2c7;
+}
+
+.product-contact-section {
+  background: transparent;
+  backdrop-filter: blur(0px);
+  transition: background 0.4s ease;
+}
+
+.contact-card {
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 16px rgba(8, 214, 255, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+[data-bs-theme="light"] .contact-card {
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.03);
+}
+
+.whatsapp-box {
+  background-color: #25d366;
+}
+
+[data-bs-theme="light"] .whatsapp-box {
+  background-color: #25d366;
+  color: white;
+}
+
+[data-bs-theme="dark"] .whatsapp-box {
+  background-color: #128c7e;
+  color: #fff;
+}
+
+.contact-card input,
+.contact-card textarea,
+.contact-card select {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: inherit;
+  border-radius: 8px;
+  border: none;
+}
+
+[data-bs-theme="light"] .contact-card input,
+[data-bs-theme="light"] .contact-card textarea,
+[data-bs-theme="light"] .contact-card select {
+  background-color: #f1f5f9;
+  color: #111;
+  border: 1px solid #ced4da;
+}
+
+
+/* Footer style for both light and dark themes */
+#siteFooter {
+  transition: background-color 0.3s, color 0.3s;
+}
+
+[data-bs-theme="dark"] #siteFooter {
+  background: linear-gradient(
+    to bottom right,
+    rgba(2, 2, 8, 0.9),
+    rgba(8, 20, 40, 0.9)
+  );
+  color: #fff;
+}
+
+[data-bs-theme="light"] #siteFooter {
+  background-color: #f8f9fa !important;
+  color: #212529;
+}
