@@ -1,5 +1,12 @@
+// ✅ Global Theme Toggle Function (accessible from HTML onclick)
+window.toggleTheme = function () {
+  const currentTheme = document.documentElement.getAttribute('data-bs-theme');
+  const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+  setTheme(newTheme);
+};
+
 document.addEventListener("DOMContentLoaded", () => {
-  // THEME FUNCTIONS
+  // ✅ Theme Setup
   function getPreferredTheme() {
     const stored = localStorage.getItem('theme');
     if (stored) return stored;
@@ -13,15 +20,10 @@ document.addEventListener("DOMContentLoaded", () => {
     updateNavbarTheme();
   }
 
-  function toggleTheme() {
-    const currentTheme = document.documentElement.getAttribute('data-bs-theme');
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    setTheme(newTheme);
-  }
-
   function updateThemeIcon() {
     const isDark = document.documentElement.getAttribute("data-bs-theme") === "dark";
     const iconClass = isDark ? "bi-sun-fill text-warning" : "bi-moon-fill text-dark";
+
     const desktopIcon = document.getElementById("themeToggleIconDesktop");
     const mobileIcon = document.getElementById("themeToggleIconMobile");
 
@@ -39,10 +41,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // INITIALIZE THEME
+  // ✅ Apply Initial Theme
   setTheme(getPreferredTheme());
 
-  // LISTEN TO SYSTEM THEME CHANGES
+  // ✅ Listen to System Theme Change
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
     if (!localStorage.getItem('theme')) {
       const systemTheme = e.matches ? 'dark' : 'light';
@@ -50,13 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // TOGGLE THEME BUTTON
-  const themeToggleBtn = document.getElementById("themeToggle");
-  if (themeToggleBtn) {
-    themeToggleBtn.addEventListener("click", toggleTheme);
-  }
-
-  // NAVBAR TOGGLE + COLLAPSE
+  // ✅ Navbar + Scroll + Collapse Functionality
   const navbar = document.getElementById("navbar");
   const navMenu = document.getElementById("navMenu");
   const toggler = document.querySelector(".custom-toggler");
@@ -67,14 +63,14 @@ document.addEventListener("DOMContentLoaded", () => {
     if (toggler) toggler.classList.remove("active");
   }
 
-  // Toggle icon class on toggler click
+  // Toggle toggler active class
   if (toggler) {
     toggler.addEventListener("click", () => {
       toggler.classList.toggle("active");
     });
   }
 
-  // Collapse on nav-link click
+  // Collapse nav on nav-link click
   document.querySelectorAll(".nav-link").forEach(link => {
     link.addEventListener("click", () => {
       if (window.innerWidth < 992 && navMenu?.classList.contains("show")) {
@@ -95,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Collapse on scroll + navbar style
+  // Collapse and style navbar on scroll
   window.addEventListener("scroll", () => {
     if (window.scrollY > 50) {
       navbar?.classList.add("scrolled");
@@ -110,7 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
     updateNavbarTheme();
   });
 
-  // Intersection Observer for fade-in
+  // ✅ Fade-in Elements on Scroll (Intersection Observer)
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) {
@@ -122,7 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.querySelectorAll(".fade-in").forEach(el => io.observe(el));
 
-  // Menu background when opened
+  // ✅ Add background when mobile menu opens
   if (navMenu) {
     navMenu.addEventListener("shown.bs.collapse", () => {
       navbar?.classList.add("bg-body");
