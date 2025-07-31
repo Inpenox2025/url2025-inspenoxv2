@@ -1,3 +1,32 @@
+// === GLOBAL THEME FUNCTIONS ===
+function setTheme(theme) {
+  document.documentElement.setAttribute('data-bs-theme', theme);
+  localStorage.setItem('theme', theme);
+  updateThemeIcon();
+  updateNavbarTheme();
+}
+
+function updateThemeIcon() {
+  const isDark = document.documentElement.getAttribute("data-bs-theme") === "dark";
+  const iconClass = isDark ? "bi-sun-fill text-warning" : "bi-moon-fill text-dark";
+
+  const desktopIcon = document.getElementById("themeToggleIconDesktop");
+  const mobileIcon = document.getElementById("themeToggleIconMobile");
+
+  if (desktopIcon) desktopIcon.className = `bi ${iconClass}`;
+  if (mobileIcon) mobileIcon.className = `bi ${iconClass}`;
+}
+
+function updateNavbarTheme() {
+  const navbar = document.getElementById("navbar");
+  const isDark = document.documentElement.getAttribute("data-bs-theme") === "dark";
+
+  if (navbar) {
+    navbar.classList.toggle("navbar-dark", isDark);
+    navbar.classList.toggle("navbar-light", !isDark);
+  }
+}
+
 // ✅ Global Theme Toggle Function (accessible from HTML onclick)
 window.toggleTheme = function () {
   const currentTheme = document.documentElement.getAttribute('data-bs-theme');
@@ -5,46 +34,19 @@ window.toggleTheme = function () {
   setTheme(newTheme);
 };
 
+// === DOM READY SECTION ===
 document.addEventListener("DOMContentLoaded", () => {
-  // ✅ Theme Setup
+  // Theme Setup
   function getPreferredTheme() {
     const stored = localStorage.getItem('theme');
     if (stored) return stored;
     return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
   }
 
-  function setTheme(theme) {
-    document.documentElement.setAttribute('data-bs-theme', theme);
-    localStorage.setItem('theme', theme);
-    updateThemeIcon();
-    updateNavbarTheme();
-  }
-
-  function updateThemeIcon() {
-    const isDark = document.documentElement.getAttribute("data-bs-theme") === "dark";
-    const iconClass = isDark ? "bi-sun-fill text-warning" : "bi-moon-fill text-dark";
-
-    const desktopIcon = document.getElementById("themeToggleIconDesktop");
-    const mobileIcon = document.getElementById("themeToggleIconMobile");
-
-    if (desktopIcon) desktopIcon.className = `bi ${iconClass}`;
-    if (mobileIcon) mobileIcon.className = `bi ${iconClass}`;
-  }
-
-  function updateNavbarTheme() {
-    const navbar = document.getElementById("navbar");
-    const isDark = document.documentElement.getAttribute("data-bs-theme") === "dark";
-
-    if (navbar) {
-      navbar.classList.toggle("navbar-dark", isDark);
-      navbar.classList.toggle("navbar-light", !isDark);
-    }
-  }
-
-  // ✅ Apply Initial Theme
+  // Apply Initial Theme
   setTheme(getPreferredTheme());
 
-  // ✅ Listen to System Theme Change
+  // Listen to system theme changes
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
     if (!localStorage.getItem('theme')) {
       const systemTheme = e.matches ? 'dark' : 'light';
@@ -52,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // ✅ Navbar + Scroll + Collapse Functionality
+  // Navbar logic
   const navbar = document.getElementById("navbar");
   const navMenu = document.getElementById("navMenu");
   const toggler = document.querySelector(".custom-toggler");
@@ -106,7 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
     updateNavbarTheme();
   });
 
-  // ✅ Fade-in Elements on Scroll (Intersection Observer)
+  // Fade-in Elements on Scroll
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) {
@@ -118,7 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.querySelectorAll(".fade-in").forEach(el => io.observe(el));
 
-  // ✅ Add background when mobile menu opens
+  // Mobile menu background toggle
   if (navMenu) {
     navMenu.addEventListener("shown.bs.collapse", () => {
       navbar?.classList.add("bg-body");
