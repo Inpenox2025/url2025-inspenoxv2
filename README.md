@@ -6,8 +6,6 @@ This is the official website for Inspenox, India's first Industry 4.0 platform, 
 ## Features
 
 - **Products:**  
-  - ERP System: Automate HR, Inventory, Payroll & CRM workflows.
-  - POS System: Smart billing with inventory & cloud sync for retail and pharma.
   - LMS Portals: Host courses, quizzes & certifications.
   - OEM Automation: Custom software for smart machines and AI-driven factory control.
 
