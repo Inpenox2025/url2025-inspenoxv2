@@ -414,8 +414,8 @@
                 <div class="col-md-6">
                   <select class="form-select">
                     <option selected disabled>Product of Interest</option>
-                    <option>ERP System</option>
-                    <option>POS System</option>
+                    <!-- <option>ERP System</option> -->
+                    <!-- <option>POS System</option> -->
                     <option>LMS Portal</option>
                     <option>OEM Automation</option>
                   </select>
@@ -427,8 +427,8 @@
                 <div class="col-12 d-flex align-items-center gap-2">
                   <input type="checkbox" class="form-check-input" id="agreeCheck" required />
                   <label for="agreeCheck" class="form-check-label small">
-                    I agree to the <a href="#">Terms of Service</a> and
-                    <a href="#">Privacy Policy</a>
+                    I agree to the<a href="#" data-bs-toggle="modal" data-bs-target="#termsModal"> and
+                      <a href="#" data-bs-toggle="modal" data-bs-target="#privacyModal">Privacy Policy</a>
                   </label>
                 </div>
                 <div class="col-12">
@@ -479,6 +479,69 @@
 
 
   </script>
+
+  <!-- Terms & Conditions Modal -->
+  <div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="termsModalLabel">Terms & Conditions</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p><strong>Effective Date:</strong> July 31, 2025</p>
+          <p>
+            By accessing and using Inspenox services, you agree to be bound by these Terms and Conditions. Our services
+            are provided "as-is" and we reserve the right to modify or discontinue them at any time.
+          </p>
+          <ul>
+            <li>Use of the platform is at your own risk.</li>
+            <li>Users must not misuse or attempt to exploit the platform.</li>
+            <li>All content and intellectual property belong to Inspenox.</li>
+            <li>Violation of terms may result in access termination without notice.</li>
+          </ul>
+          <p>
+            For detailed legal obligations, contact us at <a href="mailto:legal@inspenox.in">legal@inspenox.in</a>.
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Privacy Policy Modal -->
+  <div class="modal fade" id="privacyModal" tabindex="-1" aria-labelledby="privacyModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="privacyModalLabel">Privacy Policy</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p><strong>Effective Date:</strong> July 31, 2025</p>
+          <p>
+            At Inspenox, we value your privacy. This policy outlines how we collect, use, and safeguard your
+            information.
+          </p>
+          <ul>
+            <li>We collect data to provide and improve services.</li>
+            <li>Your data is never sold or shared without consent.</li>
+            <li>We use secure protocols to protect your information.</li>
+            <li>You may request data deletion or correction at any time.</li>
+          </ul>
+          <p>
+            For any privacy-related queries, reach us at <a href="mailto:privacy@inspenox.in">privacy@inspenox.in</a>.
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </body>
 
 </html>
