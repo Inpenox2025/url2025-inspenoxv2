@@ -1,134 +1,101 @@
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Inspenox | Industry 4.0 Tech Solutions</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="assets/css/styles.css" />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
-      rel="stylesheet"
-    />
-    <meta name="color-scheme" content="dark light" />
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
-    <link rel="icon" href="assets/images/favicon.png" type="image/x-icon" />
-  </head>
 
-  <body>
-    <!-- Navbar -->
-    <nav
-      id="navbar"
-      class="navbar navbar-expand-lg navbar-dark transparent fixed-top"
-    >
-      <div class="container">
-        <a class="navbar-brand d-flex align-items-center" href="#">
-          <img
-            src="assets/images/Recovered.png"
-            alt="Inspenox Logo"
-            class="me-2"
-            style="height: 80px; width: auto"
-          />
-        </a>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Inspenox | Industry 4.0 Tech Solutions</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
+  <meta name="color-scheme" content="dark light" />
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
+  <link rel="icon" href="assets/images/favicon.png" type="image/x-icon" />
+</head>
 
-        <button
-          class="navbar-toggler custom-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navMenu"
-          aria-controls="navMenu"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="toggler-icon top-bar"></span>
-          <span class="toggler-icon middle-bar"></span>
-          <span class="toggler-icon bottom-bar"></span>
-        </button>
+<body>
+  <!-- Navbar -->
+  <nav id="navbar" class="navbar navbar-expand-lg navbar-dark transparent fixed-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <img src="assets/images/Recovered.png" alt="Inspenox Logo" class="me-2" style="height: 80px; width: auto" />
+      </a>
 
-        <!-- 
+      <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
+        aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="toggler-icon top-bar"></span>
+        <span class="toggler-icon middle-bar"></span>
+        <span class="toggler-icon bottom-bar"></span>
+      </button>
+
+      <!-- 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
                 <span class="navbar-toggler-icon"></span>
             </button> -->
 
-        <div class="collapse navbar-collapse" id="navMenu">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="#products">Products</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#partners">Partners</a>
-            </li>
-            <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
-            <li class="nav-item">
-              <a class="nav-link" href="#testimonials">Testimonials</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#contact">Contact</a>
-            </li>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#products">Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#partners">Partners</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
+          <li class="nav-item">
+            <a class="nav-link" href="#testimonials">Testimonials</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
 
-            <!-- Smooth Theme Toggle as Nav Item (Visible only on mobile) -->
-            <li class="nav-item d-lg-none mt-2">
-              <button
-                class="theme-toggle-button w-auto mx-3"
-                onclick="toggleTheme()"
-                id="themeToggleBtnMobile"
-              >
-                <i class="bi" id="themeToggleIconMobile"></i>
-              </button>
-            </li>
-          </ul>
-
-          <!-- Desktop-only Toggle + Get Demo -->
-          <div class="d-none d-lg-flex align-items-center gap-2 ms-3">
-            <button
-              class="theme-toggle-button"
-              onclick="toggleTheme()"
-              id="themeToggleBtnDesktop"
-            >
-              <i class="bi" id="themeToggleIconDesktop"></i>
+          <!-- Smooth Theme Toggle as Nav Item (Visible only on mobile) -->
+          <li class="nav-item d-lg-none mt-2">
+            <button class="theme-toggle-button w-auto mx-3" onclick="toggleTheme()" id="themeToggleBtnMobile">
+              <i class="bi" id="themeToggleIconMobile"></i>
             </button>
-            <a href="#" class="btn btn-gradient btn-sm">Get Demo</a>
-          </div>
+          </li>
+        </ul>
+
+        <!-- Desktop-only Toggle + Get Demo -->
+        <div class="d-none d-lg-flex align-items-center gap-2 ms-3">
+          <button class="theme-toggle-button" onclick="toggleTheme()" id="themeToggleBtnDesktop">
+            <i class="bi" id="themeToggleIconDesktop"></i>
+          </button>
+          <a href="#" class="btn btn-gradient btn-sm">Get Demo</a>
         </div>
       </div>
-    </nav>
+    </div>
+  </nav>
 
-    <!-- Hero Section -->
-    <section class="hero" data-aos="fade-up">
-      <div class="container">
-        <span class="badge badge-glow rounded-pill mb-3" style="color: #000"
-          >India's First Industry 4.0 Platform</span
-        >
-        <h1 class="display-5 fw-bold">
-          Empowering Enterprises with
-          <span class="text-info">Intelligent Solutions</span>
-        </h1>
-        <p class="lead mt-3">
-          From LMS to AI-powered OEM automation, Inspenox transforms industries
-          for the digital future.
-        </p>
-        <a href="#" class="btn btn-theme mt-4">Request Demo →</a>
-      </div>
-    </section>
+  <!-- Hero Section -->
+  <section class="hero" data-aos="fade-up">
+    <div class="container">
+      <span class="badge badge-glow rounded-pill mb-3" style="color: #000">India's First Industry 4.0 Platform</span>
+      <h1 class="display-5 fw-bold">
+        Empowering Enterprises with
+        <span class="text-info">Intelligent Solutions</span>
+      </h1>
+      <p class="lead mt-3">
+        From LMS to AI-powered OEM automation, Inspenox transforms industries
+        for the digital future.
+      </p>
+      <a href="#" class="btn btn-theme mt-4">Request Demo →</a>
+    </div>
+  </section>
 
-    <!-- Products Section -->
-    <section id="products" class="py-5 products-section text-center">
-      <div class="container">
-        <h2 class="fw-bold mb-3">
-          Our <span class="text-primary">Products</span>
-        </h2>
-        <p class="text-muted mb-5"></p>
-        <div class="row g-4">
-          <!-- ERP Card -->
-          <!-- <div class="col-md-3 col-sm-6">
+  <!-- Products Section -->
+  <section id="products" class="py-5 products-section text-center">
+    <div class="container">
+      <h2 class="fw-bold mb-3">
+        Our <span class="text-primary">Products</span>
+      </h2>
+      <p class="text-muted mb-5"></p>
+      <div class="row g-4">
+        <!-- ERP Card -->
+        <!-- <div class="col-md-3 col-sm-6">
             <div
               class="product-card card h-100 border-0 p-4 text-start"
               data-aos="zoom-in"
@@ -154,8 +121,8 @@
             </div>
           </div> -->
 
-          <!-- POS Card -->
-          <!-- <div class="col-md-3 col-sm-6">
+        <!-- POS Card -->
+        <!-- <div class="col-md-3 col-sm-6">
             <div
               class="product-card card h-100 border-0 p-4 text-start"
               data-aos="zoom-in"
@@ -181,420 +148,320 @@
             </div>
           </div> -->
 
-          <!-- LMS Card -->
-          <div class="col-md-3 col-sm-6">
-            <div
-              class="product-card card h-100 border-0 p-4 text-start"
-              data-aos="zoom-in"
-              data-aos-delay="200"
-            >
-              <div class="text-center mb-3">
-                <img
-                  src="https://img.icons8.com/?size=100&id=7F71NyvKDYDW&format=png"
-                  class="product-icon"
-                  alt="LMS"
-                />
-              </div>
-              <h5 class="fw-semibold">LMS Portals</h5>
-              <p class="small">
-                Host courses, quizzes & certifications with complete learning
-                management.
-              </p>
-              <a
-                href="products/lms.html"
-                class="btn btn-outline-warning btn-sm mt-auto"
-                >Learn More</a
-              >
+        <!-- LMS Card -->
+        <div class="col-md-6 col-sm-12">
+          <div class="product-card card h-100 border-0 p-4 text-start" data-aos="zoom-in" data-aos-delay="200">
+            <div class="text-center mb-3">
+              <img src="https://img.icons8.com/?size=100&id=7F71NyvKDYDW&format=png" class="product-icon" alt="LMS" />
             </div>
+            <h5 class="fw-semibold">LMS Portals</h5>
+            <p class="small">
+              Host courses, quizzes & certifications with complete learning
+              management.
+            </p>
+            <a href="products/lms.html" class="btn btn-outline-warning btn-sm mt-auto">Learn More</a>
           </div>
+        </div>
 
-          <!-- OEM Card -->
-          <div class="col-md-3 col-sm-6">
-            <div
-              class="product-card card h-100 border-0 p-4 text-start"
-              data-aos="zoom-in"
-              data-aos-delay="200"
-            >
-              <div class="text-center mb-3">
-                <img
-                  src="https://img.icons8.com/?size=100&id=59023&format=png"
-                  class="product-icon"
-                  alt="OEM"
-                />
-              </div>
-              <h5 class="fw-semibold">OEM Automation</h5>
-              <p class="small">
-                Custom software for smart machines and AI-driven factory
-                control.
-              </p>
-              <a
-                href="products/oem.html"
-                class="btn btn-outline-danger btn-sm mt-auto"
-                >Learn More</a
-              >
+        <!-- OEM Card -->
+        <div class="col-md-6 col-sm-12">
+          <div class="product-card card h-100 border-0 p-4 text-start" data-aos="zoom-in" data-aos-delay="200">
+            <div class="text-center mb-3">
+              <img src="https://img.icons8.com/?size=100&id=59023&format=png" class="product-icon" alt="OEM" />
             </div>
+            <h5 class="fw-semibold">OEM Automation</h5>
+            <p class="small">
+              Custom software for smart machines and AI-driven factory
+              control.
+            </p>
+            <a href="products/oem.html" class="btn btn-outline-danger btn-sm mt-auto">Learn More</a>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Backed By Section -->
-    <section id="partners" class="py-5 backed-by-section text-center">
-      <div class="container">
-        <h2 class="fw-bold mb-3">
-          Our Trusted <span class="text-primary">Partners</span>
-        </h2>
-        <p class="text-muted mb-5">
-          Backed by leading institutions and government initiatives driving
-          innovation in India
-        </p>
-        <div class="row justify-content-center align-items-center g-4">
-          <div class="col-6 col-sm-4 col-md-2" data-aos="fade-up">
-            <div class="partner-logo">
-              <img
-                src="assets/images/aic.jpg"
-                alt="AIC Seed"
-                class="img-fluid"
-              />
-            </div>
+  <!-- Backed By Section -->
+  <section id="partners" class="py-5 backed-by-section text-center">
+    <div class="container">
+      <h2 class="fw-bold mb-3">
+        Our Trusted <span class="text-primary">Partners</span>
+      </h2>
+      <p class="text-muted mb-5">
+        Backed by leading institutions and government initiatives driving
+        innovation in India
+      </p>
+      <div class="row justify-content-center align-items-center g-4">
+        <div class="col-6 col-sm-4 col-md-2" data-aos="fade-up">
+          <div class="partner-logo">
+            <img src="assets/images/aic.jpg" alt="AIC Seed" class="img-fluid" />
           </div>
-          <div class="col-6 col-sm-4 col-md-2" data-aos="fade-up">
-            <div class="partner-logo">
-              <img
-                src="assets/images/meity1.png"
-                alt="MeitY Startup Hub"
-                class="img-fluid"
-              />
-            </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-2" data-aos="fade-up">
+          <div class="partner-logo">
+            <img src="assets/images/meity1.png" alt="MeitY Startup Hub" class="img-fluid" />
           </div>
-          <div class="col-6 col-sm-4 col-md-2" data-aos="fade-up">
-            <div class="partner-logo">
-              <img
-                src="assets/images/iiser.png"
-                alt="IISER Pune"
-                class="img-fluid"
-              />
-            </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-2" data-aos="fade-up">
+          <div class="partner-logo">
+            <img src="assets/images/iiser.png" alt="IISER Pune" class="img-fluid" />
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Meet Our Team Section -->
-    <section id="team" class="team-section py-5">
-      <div class="container text-center">
-        <h2 class="fw-bold mb-3">
-          Meet Our <span class="text-primary">Product Leads</span>
-        </h2>
-        <p class="text-muted mb-5">
-          Each product is led by experts combining domain knowledge, technical
-          mastery, and leadership excellence.
-        </p>
+  <!-- Meet Our Team Section -->
+  <section id="team" class="team-section py-5">
+    <div class="container text-center">
+      <h2 class="fw-bold mb-3">
+        Meet Our <span class="text-primary">Product Leads</span>
+      </h2>
+      <p class="text-muted mb-5">
+        Each product is led by experts combining domain knowledge, technical
+        mastery, and leadership excellence.
+      </p>
 
-        <div class="row g-4 justify-content-center">
-          <!-- ERP Lead -->
-          <div class="col-md-3 col-sm-6">
-            <div class="team-card glass-effect p-3">
-              <img
-                src="assets/images/kris.png"
-                alt="ERP Lead"
-                class="team-img img-fluid mb-3 rounded-circle shadow"
-              />
-              <h5 class="fw-semibold">Dr. Krishna</h5>
-              <p class="text-primary small mb-2">Head of ERP Systems</p>
-              <p class="small text-muted">
-                Leads ERP architecture with deep expertise in enterprise-scale
-                solutions across HR, Payroll & CRM automation.
-              </p>
-            </div>
+      <div class="row g-4 justify-content-center">
+        <!-- ERP Lead -->
+        <div class="col-md-3 col-sm-6">
+          <div class="team-card glass-effect p-3">
+            <img src="assets/images/kris.png" alt="ERP Lead" class="team-img img-fluid mb-3 rounded-circle shadow" />
+            <h5 class="fw-semibold">Dr. Krishna</h5>
+            <p class="text-primary small mb-2">Head of ERP Systems</p>
+            <p class="small text-muted">
+              Leads ERP architecture with deep expertise in enterprise-scale
+              solutions across HR, Payroll & CRM automation.
+            </p>
           </div>
+        </div>
 
-          <!-- LMS Lead -->
-          <div class="col-md-3 col-sm-6">
-            <div class="team-card glass-effect p-3">
-              <img
-                src="assets/images/barath.png"
-                alt="LMS Lead"
-                class="team-img img-fluid mb-3 rounded-circle shadow"
-              />
-              <h5 class="fw-semibold">Mr. Sarath</h5>
-              <p class="text-primary small mb-2">Head of LMS Systems</p>
-              <p class="small text-muted">
-                Drives innovation in academic platforms, integrating AI,
-                assessments, and LMS tools for seamless learning delivery.
-              </p>
-            </div>
+        <!-- LMS Lead -->
+        <div class="col-md-3 col-sm-6">
+          <div class="team-card glass-effect p-3">
+            <img src="assets/images/barath.png" alt="LMS Lead" class="team-img img-fluid mb-3 rounded-circle shadow" />
+            <h5 class="fw-semibold">Mr. Sarath</h5>
+            <p class="text-primary small mb-2">Head of LMS Systems</p>
+            <p class="small text-muted">
+              Drives innovation in academic platforms, integrating AI,
+              assessments, and LMS tools for seamless learning delivery.
+            </p>
           </div>
+        </div>
 
-          <!-- POS Lead -->
-          <div class="col-md-3 col-sm-6">
-            <div class="team-card glass-effect p-3">
-              <img
-                src="assets/images/barath.png"
-                alt="POS Lead"
-                class="team-img img-fluid mb-3 rounded-circle shadow"
-              />
-              <h5 class="fw-semibold">Mr. Bharath</h5>
-              <p class="text-primary small mb-2">
-                Lead Developer – POS Systems
-              </p>
-              <p class="small text-muted">
-                Full-stack specialist architecting real-time POS platforms with
-                smart inventory & billing automation features.
-              </p>
-            </div>
+        <!-- POS Lead -->
+        <div class="col-md-3 col-sm-6">
+          <div class="team-card glass-effect p-3">
+            <img src="assets/images/barath.png" alt="POS Lead" class="team-img img-fluid mb-3 rounded-circle shadow" />
+            <h5 class="fw-semibold">Mr. Bharath</h5>
+            <p class="text-primary small mb-2">
+              Lead Developer – POS Systems
+            </p>
+            <p class="small text-muted">
+              Full-stack specialist architecting real-time POS platforms with
+              smart inventory & billing automation features.
+            </p>
           </div>
+        </div>
 
-          <!-- OEM Lead -->
-          <div class="col-md-3 col-sm-6">
-            <div class="team-card glass-effect p-3">
-              <img
-                src="assets/images/naga.png"
-                alt="OEM Lead"
-                class="team-img img-fluid mb-3 rounded-circle shadow"
-              />
-              <h5 class="fw-semibold">Mrs. Nagalakshmi</h5>
-              <p class="text-primary small mb-2">OEM Solutions Architect</p>
-              <p class="small text-muted">
-                Innovates at the intersection of hardware & software, delivering
-                robust OEM integrations tailored for Industry 4.0.
-              </p>
-            </div>
+        <!-- OEM Lead -->
+        <div class="col-md-3 col-sm-6">
+          <div class="team-card glass-effect p-3">
+            <img src="assets/images/naga.png" alt="OEM Lead" class="team-img img-fluid mb-3 rounded-circle shadow" />
+            <h5 class="fw-semibold">Mrs. Nagalakshmi</h5>
+            <p class="text-primary small mb-2">OEM Solutions Architect</p>
+            <p class="small text-muted">
+              Innovates at the intersection of hardware & software, delivering
+              robust OEM integrations tailored for Industry 4.0.
+            </p>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Product Success Stories Section -->
-    <section id="testimonials" class="py-5 product-testimonial-section">
-      <div class="container text-center">
-        <h2 class="fw-bold mb-3">
-          Product <span class="text-primary">Success Stories</span>
-        </h2>
-        <p class="text-muted mb-5">
-          How organizations are using our software to streamline operations and
-          scale intelligently.
-        </p>
-        <div class="row g-4">
-          <div class="col-md-6 col-lg-4" data-aos="fade-up">
-            <div class="testi-card h-100 p-4 rounded-4">
-              <h5 class="fw-semibold">TechCorp Pvt. Ltd.</h5>
-              <div class="highlight green">
-                60% faster payroll<br /><small
-                  >Improved HR and finance coordination</small
-                >
-              </div>
-              <p class="mb-0">
-                Our ERP System enabled TechCorp to streamline their HR and
-                inventory workflows...
-              </p>
+  <!-- Product Success Stories Section -->
+  <section id="testimonials" class="py-5 product-testimonial-section">
+    <div class="container text-center">
+      <h2 class="fw-bold mb-3">
+        Product <span class="text-primary">Success Stories</span>
+      </h2>
+      <p class="text-muted mb-5">
+        How organizations are using our software to streamline operations and
+        scale intelligently.
+      </p>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4" data-aos="fade-up">
+          <div class="testi-card h-100 p-4 rounded-4">
+            <h5 class="fw-semibold">TechCorp Pvt. Ltd.</h5>
+            <div class="highlight green">
+              60% faster payroll<br /><small>Improved HR and finance coordination</small>
             </div>
+            <p class="mb-0">
+              Our ERP System enabled TechCorp to streamline their HR and
+              inventory workflows...
+            </p>
           </div>
-          <div class="col-md-6 col-lg-4" data-aos="fade-up">
-            <div class="testi-card h-100 p-4 rounded-4">
-              <h5 class="fw-semibold">GreenMart Supermarket</h5>
-              <div class="highlight blue">
-                35% faster checkout<br /><small>Better customer flow</small>
-              </div>
-              <p class="mb-0">
-                GreenMart used our POS system to enable fast, synced billing
-                across counters...
-              </p>
+        </div>
+        <div class="col-md-6 col-lg-4" data-aos="fade-up">
+          <div class="testi-card h-100 p-4 rounded-4">
+            <h5 class="fw-semibold">GreenMart Supermarket</h5>
+            <div class="highlight blue">
+              35% faster checkout<br /><small>Better customer flow</small>
             </div>
+            <p class="mb-0">
+              GreenMart used our POS system to enable fast, synced billing
+              across counters...
+            </p>
           </div>
-          <div class="col-md-6 col-lg-4" data-aos="fade-up">
-            <div class="testi-card h-100 p-4 rounded-4">
-              <h5 class="fw-semibold">EduSpark Academy</h5>
-              <div class="highlight yellow">
-                2x student engagement<br /><small
-                  >Self-paced learning improved outcomes</small
-                >
-              </div>
-              <p class="mb-0">
-                EduSpark used our LMS Portal to launch online programs with
-                certifications...
-              </p>
+        </div>
+        <div class="col-md-6 col-lg-4" data-aos="fade-up">
+          <div class="testi-card h-100 p-4 rounded-4">
+            <h5 class="fw-semibold">EduSpark Academy</h5>
+            <div class="highlight yellow">
+              2x student engagement<br /><small>Self-paced learning improved outcomes</small>
             </div>
+            <p class="mb-0">
+              EduSpark used our LMS Portal to launch online programs with
+              certifications...
+            </p>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="contact" class="py-5 product-contact-section">
-      <div class="container text-center">
-        <h2 class="fw-bold mb-3">
-          Contact <span class="text-primary">Us</span>
-        </h2>
-        <div class="row g-4 align-items-stretch">
-          <!-- Left Contact Info -->
-          <div class="col-md-5" data-aos="fade-up">
-            <div class="card h-100 p-4 rounded-4 contact-card">
-              <h4 class="fw-bold mb-3">Need Help With Our Products?</h4>
-              <p class="text-muted">
-                Connect with our team to get demos, pricing, or deployment
-                support.
-              </p>
+  <section id="contact" class="py-5 product-contact-section">
+    <div class="container text-center">
+      <h2 class="fw-bold mb-3">
+        Contact <span class="text-primary">Us</span>
+      </h2>
+      <div class="row g-4 align-items-stretch">
+        <!-- Left Contact Info -->
+        <div class="col-md-5" data-aos="fade-up">
+          <div class="card h-100 p-4 rounded-4 contact-card">
+            <h4 class="fw-bold mb-3">Need Help With Our Products?</h4>
+            <p class="text-muted">
+              Connect with our team to get demos, pricing, or deployment
+              support.
+            </p>
 
-              <ul class="list-unstyled mt-4">
-                <li
-                  class="mb-4 d-flex flex-column flex-sm-row align-items-start text-start"
-                >
-                  <i
-                    class="bi bi-telephone-fill fs-5 me-sm-3 mb-2 mb-sm-0 text-info"
-                  ></i>
-                  <div>
-                    <strong>Phone:</strong><br />
-                    <span class="text-muted">+91 94913 30702</span>
-                  </div>
-                </li>
-                <li
-                  class="mb-4 d-flex flex-column flex-sm-row align-items-start text-start"
-                >
-                  <i
-                    class="bi bi-envelope-fill fs-5 me-sm-3 mb-2 mb-sm-0 text-success"
-                  ></i>
-                  <div>
-                    <strong>Email:</strong><br />
-                    <span class="text-muted">info@inspenox.in</span>
-                  </div>
-                </li>
-                <li
-                  class="mb-3 d-flex flex-column flex-sm-row align-items-start text-start"
-                >
-                  <i
-                    class="bi bi-geo-alt-fill fs-5 me-sm-3 mb-2 mb-sm-0 text-danger"
-                  ></i>
-                  <div>
-                    <strong>Address:</strong><br />
-                    <span class="text-muted"
-                      >Somanath Heights, Andhra Bank Colony, Nagavanam, New
-                      Gaigolupadu, Kakinada 533005</span
-                    >
-                  </div>
-                </li>
-              </ul>
-              <div
-                class="whatsapp-box mt-4 p-3 rounded-3 bg-success-subtle border border-success-subtle"
-              >
-                <h6 class="d-flex align-items-center text-success mb-2">
-                  <i class="bi bi-whatsapp me-2 fs-5"></i>WhatsApp Support
-                </h6>
-                <ul class="small ps-3 mb-3 text-start text-body-secondary">
-                  <li>24/7 Product Help</li>
-                  <li>Demo Scheduling</li>
-                  <li>Partnership Inquiries</li>
-                </ul>
-                <a
-                  href="https://wa.me/919491330702"
-                  class="btn btn-success btn-sm w-100"
-                >
-                  <i class="bi bi-whatsapp"></i> Chat on WhatsApp
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Right Contact Form -->
-          <div class="col-md-7" data-aos="fade-up">
-            <div class="card h-100 p-4 rounded-4 contact-card">
-              <h4 class="fw-bold mb-4">Product Inquiry Form</h4>
-              <form>
-                <div class="row g-3">
-                  <div class="col-md-6">
-                    <input
-                      type="text"
-                      class="form-control"
-                      placeholder="Full Name *"
-                      required
-                    />
-                  </div>
-                  <div class="col-md-6">
-                    <input
-                      type="email"
-                      class="form-control"
-                      placeholder="Email Address *"
-                      required
-                    />
-                  </div>
-                  <div class="col-md-6">
-                    <input
-                      type="text"
-                      class="form-control"
-                      placeholder="Organization"
-                    />
-                  </div>
-                  <div class="col-md-6">
-                    <input
-                      type="text"
-                      class="form-control"
-                      placeholder="Phone Number"
-                    />
-                  </div>
-                  <div class="col-md-6">
-                    <select class="form-select">
-                      <option selected disabled>Your Role</option>
-                      <option>IT Manager</option>
-                      <option>Procurement Head</option>
-                      <option>Administrator</option>
-                      <option>Partner</option>
-                    </select>
-                  </div>
-                  <div class="col-md-6">
-                    <select class="form-select">
-                      <option selected disabled>Product of Interest</option>
-                      <option>ERP System</option>
-                      <option>POS System</option>
-                      <option>LMS Portal</option>
-                      <option>OEM Automation</option>
-                    </select>
-                  </div>
-                  <div class="col-12">
-                    <textarea
-                      class="form-control"
-                      rows="4"
-                      placeholder="Briefly describe your requirements..."
-                    ></textarea>
-                  </div>
-                  <div class="col-12 d-flex align-items-center gap-2">
-                    <input
-                      type="checkbox"
-                      class="form-check-input"
-                      id="agreeCheck"
-                      required
-                    />
-                    <label for="agreeCheck" class="form-check-label small">
-                      I agree to the <a href="#">Terms of Service</a> and
-                      <a href="#">Privacy Policy</a>
-                    </label>
-                  </div>
-                  <div class="col-12">
-                    <button type="submit" class="btn btn-theme w-100">
-                      <i class="bi bi-send me-2"></i>Send Message
-                    </button>
-                  </div>
+            <ul class="list-unstyled mt-4">
+              <li class="mb-4 d-flex flex-column flex-sm-row align-items-start text-start">
+                <i class="bi bi-telephone-fill fs-5 me-sm-3 mb-2 mb-sm-0 text-info"></i>
+                <div>
+                  <strong>Phone:</strong><br />
+                  <span class="text-muted">+91 94913 30702</span>
                 </div>
-              </form>
+              </li>
+              <li class="mb-4 d-flex flex-column flex-sm-row align-items-start text-start">
+                <i class="bi bi-envelope-fill fs-5 me-sm-3 mb-2 mb-sm-0 text-success"></i>
+                <div>
+                  <strong>Email:</strong><br />
+                  <span class="text-muted">info@inspenox.in</span>
+                </div>
+              </li>
+              <li class="mb-3 d-flex flex-column flex-sm-row align-items-start text-start">
+                <i class="bi bi-geo-alt-fill fs-5 me-sm-3 mb-2 mb-sm-0 text-danger"></i>
+                <div>
+                  <strong>Address:</strong><br />
+                  <span class="text-muted">Somanath Heights, Andhra Bank Colony, Nagavanam, New
+                    Gaigolupadu, Kakinada 533005</span>
+                </div>
+              </li>
+            </ul>
+            <div class="whatsapp-box mt-4 p-3 rounded-3 bg-success-subtle border border-success-subtle">
+              <h6 class="d-flex align-items-center text-success mb-2">
+                <i class="bi bi-whatsapp me-2 fs-5"></i>WhatsApp Support
+              </h6>
+              <ul class="small ps-3 mb-3 text-start text-body-secondary">
+                <li>24/7 Product Help</li>
+                <li>Demo Scheduling</li>
+                <li>Partnership Inquiries</li>
+              </ul>
+              <a href="https://wa.me/919491330702" class="btn btn-success btn-sm w-100">
+                <i class="bi bi-whatsapp"></i> Chat on WhatsApp
+              </a>
             </div>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- Footer -->
-    <footer id="siteFooter" class="text-center py-4 mt-5">
-      <div class="container">
-        <p class="mb-1 mb-0">&copy; 2025 Inspenox Inc.</p>
+        <!-- Right Contact Form -->
+        <div class="col-md-7" data-aos="fade-up">
+          <div class="card h-100 p-4 rounded-4 contact-card">
+            <h4 class="fw-bold mb-4">Product Inquiry Form</h4>
+            <form>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <input type="text" class="form-control" placeholder="Full Name *" required />
+                </div>
+                <div class="col-md-6">
+                  <input type="email" class="form-control" placeholder="Email Address *" required />
+                </div>
+                <div class="col-md-6">
+                  <input type="text" class="form-control" placeholder="Organization" />
+                </div>
+                <div class="col-md-6">
+                  <input type="text" class="form-control" placeholder="Phone Number" />
+                </div>
+                <div class="col-md-6">
+                  <select class="form-select">
+                    <option selected disabled>Your Role</option>
+                    <option>IT Manager</option>
+                    <option>Procurement Head</option>
+                    <option>Administrator</option>
+                    <option>Partner</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <select class="form-select">
+                    <option selected disabled>Product of Interest</option>
+                    <option>ERP System</option>
+                    <option>POS System</option>
+                    <option>LMS Portal</option>
+                    <option>OEM Automation</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <textarea class="form-control" rows="4"
+                    placeholder="Briefly describe your requirements..."></textarea>
+                </div>
+                <div class="col-12 d-flex align-items-center gap-2">
+                  <input type="checkbox" class="form-check-input" id="agreeCheck" required />
+                  <label for="agreeCheck" class="form-check-label small">
+                    I agree to the <a href="#">Terms of Service</a> and
+                    <a href="#">Privacy Policy</a>
+                  </label>
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn btn-theme w-100">
+                    <i class="bi bi-send me-2"></i>Send Message
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
-    </footer>
+    </div>
+  </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/script.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script>
-      AOS.init({
-        duration: 800, // optional, default 400ms
-        once: true, // animate only once on scroll
-      });
-    </script>
-  </body>
+  <!-- Footer -->
+  <footer id="siteFooter" class="text-center py-4 mt-5">
+    <div class="container">
+      <p class="mb-1 mb-0">&copy; 2025 Inspenox Inc.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800, // optional, default 400ms
+      once: true, // animate only once on scroll
+    });
+  </script>
+</body>
+
 </html>
