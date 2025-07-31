@@ -1,100 +1,93 @@
-// ✅ Theme Toggle Function
-function getPreferredTheme() {
-  const stored = localStorage.getItem('theme');
-  if (stored) return stored;
-  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-}
-
-function setTheme(theme) {
-  document.documentElement.setAttribute('data-bs-theme', theme);
-  localStorage.setItem('theme', theme);
-  updateThemeIcon();
-  updateNavbarTheme();
-}
-
-function toggleTheme() {
-  const currentTheme = document.documentElement.getAttribute('data-bs-theme');
-  const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-  setTheme(newTheme);
-}
-
-// Apply on page load
-document.addEventListener('DOMContentLoaded', () => {
-  const preferredTheme = getPreferredTheme();
-  setTheme(preferredTheme);
-});
-
-// Listen to system theme changes — if no manual override
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-  const stored = localStorage.getItem('theme');
-  if (!stored) {
-    const systemTheme = e.matches ? 'dark' : 'light';
-    setTheme(systemTheme);
+document.addEventListener("DOMContentLoaded", () => {
+  // THEME FUNCTIONS
+  function getPreferredTheme() {
+    const stored = localStorage.getItem('theme');
+    if (stored) return stored;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
   }
-});
 
-// Button toggle
-document.getElementById('themeToggle').addEventListener('click', toggleTheme);
+  function setTheme(theme) {
+    document.documentElement.setAttribute('data-bs-theme', theme);
+    localStorage.setItem('theme', theme);
+    updateThemeIcon();
+    updateNavbarTheme();
+  }
 
+  function toggleTheme() {
+    const currentTheme = document.documentElement.getAttribute('data-bs-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    setTheme(newTheme);
+  }
 
-// ✅ Update Theme Icon
-function updateThemeIcon() {
-  const isDark = document.documentElement.getAttribute("data-bs-theme") === "dark";
-  const iconClass = isDark ? "bi-sun-fill text-warning" : "bi-moon-fill text-dark";
+  function updateThemeIcon() {
+    const isDark = document.documentElement.getAttribute("data-bs-theme") === "dark";
+    const iconClass = isDark ? "bi-sun-fill text-warning" : "bi-moon-fill text-dark";
+    const desktopIcon = document.getElementById("themeToggleIconDesktop");
+    const mobileIcon = document.getElementById("themeToggleIconMobile");
 
-  const desktopIcon = document.getElementById("themeToggleIconDesktop");
-  const mobileIcon = document.getElementById("themeToggleIconMobile");
+    if (desktopIcon) desktopIcon.className = `bi ${iconClass}`;
+    if (mobileIcon) mobileIcon.className = `bi ${iconClass}`;
+  }
 
-  if (desktopIcon) desktopIcon.className = `bi ${iconClass}`;
-  if (mobileIcon) mobileIcon.className = `bi ${iconClass}`;
-}
+  function updateNavbarTheme() {
+    const navbar = document.getElementById("navbar");
+    const isDark = document.documentElement.getAttribute("data-bs-theme") === "dark";
 
-// ✅ Update Navbar Theme (light/dark class)
-function updateNavbarTheme() {
-  const navbar = document.getElementById("navbar");
-  const isDark = document.documentElement.getAttribute("data-bs-theme") === "dark";
+    if (navbar) {
+      navbar.classList.toggle("navbar-dark", isDark);
+      navbar.classList.toggle("navbar-light", !isDark);
+    }
+  }
 
-  navbar.classList.toggle("navbar-dark", isDark);
-  navbar.classList.toggle("navbar-light", !isDark);
-}
+  // INITIALIZE THEME
+  setTheme(getPreferredTheme());
 
-// ✅ Collapse Navbar
-function collapseNavbar(navbarCollapse, toggler) {
-  const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse) || new bootstrap.Collapse(navbarCollapse);
-  bsCollapse.hide();
-  toggler.classList.remove("active");
-}
+  // LISTEN TO SYSTEM THEME CHANGES
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+    if (!localStorage.getItem('theme')) {
+      const systemTheme = e.matches ? 'dark' : 'light';
+      setTheme(systemTheme);
+    }
+  });
 
-// ✅ DOM Ready
-document.addEventListener("DOMContentLoaded", function () {
+  // TOGGLE THEME BUTTON
+  const themeToggleBtn = document.getElementById("themeToggle");
+  if (themeToggleBtn) {
+    themeToggleBtn.addEventListener("click", toggleTheme);
+  }
+
+  // NAVBAR TOGGLE + COLLAPSE
   const navbar = document.getElementById("navbar");
   const navMenu = document.getElementById("navMenu");
   const toggler = document.querySelector(".custom-toggler");
 
-  updateThemeIcon();
-  updateNavbarTheme();
+  function collapseNavbar(navbarCollapse, toggler) {
+    const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse) || new bootstrap.Collapse(navbarCollapse);
+    bsCollapse.hide();
+    if (toggler) toggler.classList.remove("active");
+  }
 
-  // ✅ Toggle class when toggler is clicked
+  // Toggle icon class on toggler click
   if (toggler) {
-    toggler.addEventListener("click", function () {
+    toggler.addEventListener("click", () => {
       toggler.classList.toggle("active");
     });
   }
 
-  // ✅ Collapse on nav-link click
+  // Collapse on nav-link click
   document.querySelectorAll(".nav-link").forEach(link => {
-    link.addEventListener("click", function () {
-      if (window.innerWidth < 992 && navMenu.classList.contains("show")) {
+    link.addEventListener("click", () => {
+      if (window.innerWidth < 992 && navMenu?.classList.contains("show")) {
         collapseNavbar(navMenu, toggler);
       }
     });
   });
 
-  // ✅ Collapse on outside click
-  document.addEventListener("click", function (e) {
+  // Collapse on outside click
+  document.addEventListener("click", (e) => {
     if (
       window.innerWidth < 992 &&
-      navMenu.classList.contains("show") &&
+      navMenu?.classList.contains("show") &&
       !navMenu.contains(e.target) &&
       !toggler.contains(e.target)
     ) {
@@ -102,24 +95,22 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // ✅ Collapse on scroll
-  window.addEventListener("scroll", function () {
+  // Collapse on scroll + navbar style
+  window.addEventListener("scroll", () => {
     if (window.scrollY > 50) {
-      navbar.classList.add("scrolled");
+      navbar?.classList.add("scrolled");
     } else {
-      navbar.classList.remove("scrolled");
+      navbar?.classList.remove("scrolled");
     }
 
-    if (window.innerWidth < 992 && navMenu.classList.contains("show")) {
+    if (window.innerWidth < 992 && navMenu?.classList.contains("show")) {
       collapseNavbar(navMenu, toggler);
     }
 
     updateNavbarTheme();
   });
-});
 
-
-document.addEventListener("DOMContentLoaded", () => {
+  // Intersection Observer for fade-in
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) {
@@ -130,19 +121,17 @@ document.addEventListener("DOMContentLoaded", () => {
   }, { threshold: 0.2 });
 
   document.querySelectorAll(".fade-in").forEach(el => io.observe(el));
+
+  // Menu background when opened
+  if (navMenu) {
+    navMenu.addEventListener("shown.bs.collapse", () => {
+      navbar?.classList.add("bg-body");
+      navbar?.classList.remove("transparent");
+    });
+
+    navMenu.addEventListener("hidden.bs.collapse", () => {
+      navbar?.classList.remove("bg-body");
+      navbar?.classList.add("transparent");
+    });
+  }
 });
-
-// ✅ Add solid background when mobile menu is open
-const navMenu = document.getElementById("navMenu");
-
-if (navMenu) {
-  navMenu.addEventListener("shown.bs.collapse", () => {
-    navbar.classList.add("bg-body");
-    navbar.classList.remove("transparent");
-  });
-
-  navMenu.addEventListener("hidden.bs.collapse", () => {
-    navbar.classList.remove("bg-body");
-    navbar.classList.add("transparent");
-  });
-}
