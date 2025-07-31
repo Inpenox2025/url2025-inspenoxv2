@@ -18,43 +18,41 @@
 <body>
   <!-- Navbar -->
   <nav id="navbar" class="navbar navbar-expand-lg navbar-dark transparent fixed-top">
-    <div class="container">
+    <div class="container d-flex align-items-center">
       <a class="navbar-brand d-flex align-items-center" href="#">
         <img src="assets/images/Recovered.png" alt="Inspenox Logo" class="me-2" style="height: 80px; width: auto" />
       </a>
 
-      <!-- Mobile Theme Toggle (Left of Hamburger) -->
-      <button class="theme-toggle-button d-lg-none me-2" onclick="toggleTheme()" id="themeToggleBtnMobile">
-        <i class="bi" id="themeToggleIconMobile"></i>
-      </button>
+      <!-- Spacer to push toggles to the right -->
+      <div class="ms-auto d-flex align-items-center">
+        <!-- Mobile Theme Toggle -->
+        <button class="theme-toggle-button d-lg-none me-2" onclick="toggleTheme()" id="themeToggleBtnMobile"
+          aria-label="Toggle theme">
+          <i class="bi" id="themeToggleIconMobile"></i>
+        </button>
 
-      <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
-        aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="toggler-icon top-bar"></span>
-        <span class="toggler-icon middle-bar"></span>
-        <span class="toggler-icon bottom-bar"></span>
-      </button>
+        <!-- Hamburger Menu Toggle -->
+        <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
+          aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="toggler-icon top-bar"></span>
+          <span class="toggler-icon middle-bar"></span>
+          <span class="toggler-icon bottom-bar"></span>
+        </button>
+      </div>
 
       <div class="collapse navbar-collapse" id="navMenu">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="#products">Products</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#partners">Partners</a>
-          </li>
+          <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
+          <li class="nav-item"><a class="nav-link" href="#partners">Partners</a></li>
           <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
-          <li class="nav-item">
-            <a class="nav-link" href="#testimonials">Testimonials</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#contact">Contact</a>
-          </li>
+          <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
 
         <!-- Desktop-only Toggle + Get Demo -->
         <div class="d-none d-lg-flex align-items-center gap-2 ms-3">
-          <button class="theme-toggle-button" onclick="toggleTheme()" id="themeToggleBtnDesktop">
+          <button class="theme-toggle-button" onclick="toggleTheme()" id="themeToggleBtnDesktop"
+            aria-label="Toggle theme">
             <i class="bi" id="themeToggleIconDesktop"></i>
           </button>
           <a href="#" class="btn btn-gradient btn-sm">Get Demo</a>
@@ -62,6 +60,7 @@
       </div>
     </div>
   </nav>
+
 
 
   <!-- Hero Section -->
