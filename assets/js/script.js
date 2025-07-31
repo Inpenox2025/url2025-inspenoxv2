@@ -137,18 +137,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // cache control
 
-window.addEventListener("beforeunload", function () {
-  // Clear cache-related data before leaving page
-  if ('caches' in window) {
-    caches.keys().then(function (names) {
-      for (let name of names) caches.delete(name);
-    });
-  }
-});
+// window.addEventListener("beforeunload", function () {
+//   // Clear cache-related data before leaving page
+//   if ('caches' in window) {
+//     caches.keys().then(function (names) {
+//       for (let name of names) caches.delete(name);
+//     });
+//   }
+// });
 
-document.querySelectorAll('link[rel="stylesheet"], script[src]').forEach(el => {
-  const srcAttr = el.tagName === 'LINK' ? 'href' : 'src';
-  const url = new URL(el[srcAttr], location.href);
-  url.searchParams.set('_v', Date.now()); // Append timestamp
-  el[srcAttr] = url.href;
-});
+// document.querySelectorAll('link[rel="stylesheet"], script[src]').forEach(el => {
+//   const srcAttr = el.tagName === 'LINK' ? 'href' : 'src';
+//   const url = new URL(el[srcAttr], location.href);
+//   url.searchParams.set('_v', Date.now()); // Append timestamp
+//   el[srcAttr] = url.href;
+// });
