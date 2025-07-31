@@ -23,17 +23,17 @@
         <img src="assets/images/Recovered.png" alt="Inspenox Logo" class="me-2" style="height: 80px; width: auto" />
       </a>
 
+      <!-- Mobile Theme Toggle (Left of Hamburger) -->
+      <button class="theme-toggle-button d-lg-none me-2" onclick="toggleTheme()" id="themeToggleBtnMobile">
+        <i class="bi" id="themeToggleIconMobile"></i>
+      </button>
+
       <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
         aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
         <span class="toggler-icon top-bar"></span>
         <span class="toggler-icon middle-bar"></span>
         <span class="toggler-icon bottom-bar"></span>
       </button>
-
-      <!-- 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-                <span class="navbar-toggler-icon"></span>
-            </button> -->
 
       <div class="collapse navbar-collapse" id="navMenu">
         <ul class="navbar-nav ms-auto">
@@ -50,13 +50,6 @@
           <li class="nav-item">
             <a class="nav-link" href="#contact">Contact</a>
           </li>
-
-          <!-- Smooth Theme Toggle as Nav Item (Visible only on mobile) -->
-          <li class="nav-item d-lg-none mt-2">
-            <button class="theme-toggle-button w-auto mx-3" onclick="toggleTheme()" id="themeToggleBtnMobile">
-              <i class="bi" id="themeToggleIconMobile"></i>
-            </button>
-          </li>
         </ul>
 
         <!-- Desktop-only Toggle + Get Demo -->
@@ -69,6 +62,7 @@
       </div>
     </div>
   </nav>
+
 
   <!-- Hero Section -->
   <section class="hero" data-aos="fade-up">
