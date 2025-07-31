@@ -1,12 +1,41 @@
 // ✅ Theme Toggle Function
-function toggleTheme() {
-  const html = document.documentElement;
-  const isDark = html.getAttribute("data-bs-theme") === "dark";
-  html.setAttribute("data-bs-theme", isDark ? "light" : "dark");
+function getPreferredTheme() {
+  const stored = localStorage.getItem('theme');
+  if (stored) return stored;
+  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+}
 
+function setTheme(theme) {
+  document.documentElement.setAttribute('data-bs-theme', theme);
+  localStorage.setItem('theme', theme);
   updateThemeIcon();
   updateNavbarTheme();
 }
+
+function toggleTheme() {
+  const currentTheme = document.documentElement.getAttribute('data-bs-theme');
+  const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+  setTheme(newTheme);
+}
+
+// Apply on page load
+document.addEventListener('DOMContentLoaded', () => {
+  const preferredTheme = getPreferredTheme();
+  setTheme(preferredTheme);
+});
+
+// Listen to system theme changes — if no manual override
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+  const stored = localStorage.getItem('theme');
+  if (!stored) {
+    const systemTheme = e.matches ? 'dark' : 'light';
+    setTheme(systemTheme);
+  }
+});
+
+// Button toggle
+document.getElementById('themeToggle').addEventListener('click', toggleTheme);
+
 
 // ✅ Update Theme Icon
 function updateThemeIcon() {
